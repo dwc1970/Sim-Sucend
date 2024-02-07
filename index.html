@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucend-Sindicato de Celadores de Mendoza-</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('marcha.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .container {
+      background-color: rgba(250, 250, 250, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 70px;
+    }
+    .titulo {
+      font-size: 95px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: white; /* Color de las letras del título */
+      font-family: Georgia, sans-serif; /* Cambiar la fuente del título */
+    }
+    .subtitulo {
+      font-size: 24px;
+      color: white; /* Color del subtítulo */
+      font-family: Georgia, sans-serif; /* Cambiar la fuente del subtítulo */
+    }
+    .custom-input {
+      background-color: rgba(255, 255, 255, 0.8); /* Color de fondo de la entrada de texto */
+      border: none; /* Sin borde */
+      border-radius: 10px; /* Radio del borde */
+      padding: 10px; /* Espaciado interno */
+      color: #333; /* Color del texto */
+      font-family: Arial, sans-serif; /* Fuente del texto */
+    }
+    .custom-button {
+      background-color: black; /* Cambiar el color de fondo a negro */
+      color: white; /* Color del texto del botón */
+      border: none; /* Sin borde */
+      border-radius: 50%; /* Cambiar el radio del borde para que sea circular */
+      padding: 10px 20px; /* Espaciado interno */
+      font-size: 18px; /* Tamaño del texto del botón */
+      cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container text-center">
+    <h1 class="titulo">S U C E N D</h1>
+    <p class="subtitulo">Sindicato de Celadores de Mendoza</p>
+    <input type="text" id="nombreInput" class="custom-input" placeholder="Nombre y Apellido">
+    <button class="custom-button" onclick="ingresar()">Ingresar</button>
+    <p id="mensaje" style="color: white; font-size: 14px;"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function ingresar() {
+      var nombre = document.getElementById('nombreInput').value;
+      var nombreYApellido = nombre.trim().split(" ");
+      if (nombreYApellido.length < 2 || nombreYApellido[0] === "" || nombreYApellido[1] === "") {
+        document.getElementById('mensaje').innerHTML = "Debes ingresar tu nombre y Apellido.";
+      } else {
+        window.location.href = 'dos.html'; // Cambia 'index.html' por la URL correcta si es necesario
+      }
+    }
+  </script>
+</body>
+</html>

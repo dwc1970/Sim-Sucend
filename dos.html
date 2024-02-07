@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+
+  <style>
+    /* Estilo del fondo beige */
+    body {
+      background-color: blue-600;
+    }
+
+    /* Estilo del texto deslizante */
+    .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      animation: marquee 13s linear infinite;
+      font-size: 28px; /* Tamaño de letra más grande (puedes ajustar el valor según tus necesidades) */
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+   .blue-container {
+  background-color: #4682B4; /* Este es un tono de azul metálico */
+  text-align: center;
+  padding: 70px;
+}
+
+
+    /* Estilo del formulario de preguntas y sugerencias */
+    .form-container {
+      margin-top: 40px;
+      font-size: 28px; /* Tamaño de letra 25 para el formulario (puedes ajustar el valor según tus necesidades) */
+    }
+
+    /* Estilo de las cajas de texto en el formulario */
+    .form-control {
+      font-size: 25px; /* Tamaño de letra 25 para las cajas de texto (puedes ajustar el valor según tus necesidades) */
+    }
+
+    /* Estilo del botón más grande */
+    .btn-lg {
+      padding: 8px 30px;
+      font-size: 30px; /* Tamaño de letra 25 para el botón (puedes ajustar el valor según tus necesidades) */
+    }
+    .custom-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      border: none;
+      margin-right: 10px;
+    }
+
+    /* Estilo del contador de visitas */
+    #contador {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Bootstrap Container -->
+  <div class="container">
+    <!-- Título deslizante "SUCEND" -->
+    <div class="marquee">
+      <h1 class="text-center">SUCEND - Sindicato de Celadores de Mendoza -</h1>
+    </div>
+
+    <!-- Contenedor "Simulador Salarial" -->
+    <div class="my-4 blue-container">
+      <h2 class="text-center" style="font-size: 45px; cursor: pointer;" onclick="openSimulador()">Simulador Salarial</h2>
+    </div>
+    
+        
+    <!-- Barra de navegación -->
+    <center>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <!-- Utilizamos "ml-auto" para alinear los botones a la derecha -->
+            <a class="btn custom-btn" href="estatuto.pdf" onclick="openEstatuto();">Estatuto del Celador</a>
+            <a class="btn custom-btn" href="https://dti.mendoza.edu.ar/gem/pad/">Gem Pad</a>
+            <a class="btn custom-btn" href="https://www.osep.mendoza.gov.ar/webapp_pri/action/index">Mi Osep</a>
+            <a class="btn custom-btn" href="https://rrhh.mendoza.gov.ar/sse_generico/generico_login.jsp" onclick="openEstatuto();">Bono de Sueldo</a>
+            <a class="btn custom-btn" href="licen.pdf" onclick="openLicen()">Regimen de Licencias</a>
+            <a class="btn custom-btn" href="Noti.html" onclick="openLicen()">Bono empleados Publicos</a>
+            <a class="btn custom-btn" href="bot.html" onclick="openLicen()">Sucend Responde</a>
+            <a class="btn custom-btn" href="contacto.html" onclick="openLicen()">Contacto</a>
+          </ul>
+        </div>
+      </nav>
+    </center>
+    <div class="my-4 blue-container">
+      <h2 class="text-center" style="font-size: 17px; cursor: pointer;" onclick="openSimulador()"></h2>
+    </div>
+
+    <!-- Contador de visitas -->
+    <span id="contador">Visitas: 0 </span>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <script>
+    function openSimulador() {
+      window.open("sim.html", "_blank");
+      window.close();
+    }
+
+    // Función para obtener el contador almacenado en el almacenamiento local
+    function obtenerContador() {
+      let contador = localStorage.getItem('contador');
+      return contador ? parseInt(contador) : 0;
+    }
+
+    // Función para incrementar el contador y mostrarlo en la página
+    function incrementarContador() {
+      let contador = obtenerContador();
+      contador++;
+      localStorage.setItem('contador', contador.toString());
+      document.getElementById('contador').textContent = `Visitas: ${contador} veces`;
+    }
+
+    // Cargar el contador al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      let contador = obtenerContador();
+      document.getElementById('contador').textContent = `Visitas: ${contador} veces`;
+    });
+
+    // Incrementar el contador cuando se cargue la página
+    window.onload = incrementarContador;
+  </script>
+</body>
+
+</html>

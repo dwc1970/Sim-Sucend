@@ -1,0 +1,80 @@
+/* Estilo para el contenedor */
+.container {
+    width: 80%; /* Ancho del contenedor */
+    margin: 0 auto; /* Margen automático para centrar */
+    text-align: center; /* Centrar texto */
+  }
+  
+  /* Estilo para el color de fondo celeste */
+  .container {
+    background-color: #b0e0e6; /* Celeste */
+  }
+  
+  /* Estilo para el color de texto negro */
+  .container p, .container h1, .container h2, .container h3 {
+    color: #000000; /* Negro */
+  }
+  
+  /* Estilo para los botones de color gris */
+  .container .button {
+    background-color: #808080; /* Gris */
+    color: #ffffff; /* Texto blanco para contraste */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+/* Estilo para los botones */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3c1792; 
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 10px; /* Espacio entre botones */
+  }
+  
+  /* Estilo para el hover de los botones */
+  .boton:hover {
+    background-color: #3c1792; 
+  }
+  
+  /* Estilo para el click de los botones */
+  .boton:active {
+    background-color: #3c1792; 
+  }
+  
+  select {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3c1792; /* Color de fondo */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 10px; /* Espacio entre select */
+    border: none; /* Quitar borde */
+  }
+  
+  /* Estilo para el hover de los select */
+  select:hover {
+    background-color: #3c1792; /* Color de fondo en hover */
+  }
+  
+  /* Estilo para el focus de los select */
+  select:focus {
+    outline: none; /* Quitar contorno al enfocar */
+  }
+  footer {
+    font-size: smaller; /* Tamaño de letra más pequeño */
+    text-align: right; /* Alineación a la derecha */
+}
+  

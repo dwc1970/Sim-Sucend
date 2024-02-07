@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<title>Simulador salarial Celadores SUCEND </title>
+<link href="simulador.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="wrap">
+<div class="simulador" id="simulador">
+  <div class="cabecera">
+  <h2 style="flex: 1;margin:1vw 2vw;">Simulador Celadores SUCEND </h2>
+    <div class="arbitrarios" style=" display:none;">
+      <p class="destacado"><small>indice_cargos</small><strong id="indice_cargos" contenteditable="true">18.87103</strong></p>
+      <p class="destacado"><small>paritaria_2008</small><strong id="paritaria_2008" contenteditable="true">18994.79</strong></p>
+      <p class="destacado"><small>paritaria_2013</small><strong id="paritaria_2013" contenteditable="true">1467.0738</strong></p>
+    </div>
+    </div>
+  <div>
+ 
+    <div id="agente">
+      <div>
+        <h2>Ingrese sus datos con respecto a su estado de revista</h2>
+        <h2>Antigüedad</h2>
+        <!--<label for="porcentaje_antiguedad">porcentaje_antiguedad</label>-->
+        <select name="porcentaje_antiguedad" id="porcentaje_antiguedad">
+          <option value="0">Recién inicia</option>
+          <option value="0.02">1 año</option>
+          <option value="0.04">2 años</option>
+          <option value="0.06">3 años</option>
+          <option value="0.08">4 años</option>
+          <option value="0.10">5 años</option>
+          <option value="0.12">6 años</option>
+          <option value="0.14">7 años</option>
+          <option value="0.16">8 años</option>
+          <option value="0.18">9 años</option>
+          <option value="0.20">10 años</option>
+          <option value="0.22">11 años</option>
+          <option value="0.24">12 años</option>
+          <option value="0.26">13 años</option>
+          <option value="0.28">14 años</option>
+          <option value="0.30">15 años</option>
+          <option value="0.32">16 años</option>
+          <option value="0.34">17 años</option>
+          <option value="0.36">18 años</option>
+          <option value="0.38">19 años</option>
+          <option value="0.40">20 años</option>
+          <option value="0.42">21 años</option>
+          <option value="0.46">23 años</option>
+          <option value="0.48">24 años</option>
+          <option value="0.50">25 años</option>
+          <option value="0.52">26 años</option>
+          <option value="0.54">27 años</option>
+          <option value="0.56">28 años</option>
+          <option value="0.58">29 años</option>
+          <option value="0.60">30 años</option>
+          <option value="0.62">31 años</option>
+          <option value="0.64">32 años</option>
+          <option value="0.66">33 años</option>
+          <option value="0.68">34 años</option>
+          <option value="0.70">35 años</option>
+          <option value="0.72">36 años</option>
+          <option value="0.74">37 años</option>
+          <option value="0.76">38 años</option>
+          <option value="0.78">39 años</option>
+          <option value="0.80">40 años</option>
+        </select>
+      </div>
+      <div style="display:none;">
+          <p>Total para el agente simulado:</p>
+          <div class="descriptiva">
+              <div class="el_total"><strong>compensacion_paritaria_agente</strong><h3 id="compensacion_paritaria_agente"></h3></div>
+              <div class="el_total"><strong>salario_bruto</strong><h3 id="salario_total_bruto"></h3></div>
+              <div class="el_total"><strong>salario_descuentos</strong><h3 id="salario_total_descuentos"></h3></div>
+              <div class="el_total"><strong>salario_neto</strong><h1 id="salario_total_neto"></h1></div>
+          </div>
+      </div>
+    </div>
+  <div id="contenedor">
+  
+    <div id="generadorcargo" class="cargo">
+            <div class="datos">
+              <h2>Datos del Celador</h2> 
+              <p>
+                <select name="puntos" class="puntos">
+                  <option value="615" data-jerarquia="0" data-suplementario="0.2" selected="selected">Celador 5 hs.</option>
+                  <option value="615" data-jerarquia="0" data-suplementario="0.5" selected="selected">Celador 6.30 hs.</option>
+                </select>
+                
+              <select name="zona" class="zona">
+              	<option value="0">SIN ZONA</option>
+                <option value="0.3">30% ZONA</option>
+                <option value="0.5">50% ZONA</option>
+                <option value="0.7">70% ZONA</option>
+                <option value="1">100% ZONA</option>
+              </select>
+              
+              <select name="estudios" class="estudios">
+                    <option value="0" selected="selected">Sin titulos</option>
+                    <option value="0.2714">Certificado Estudio</option>
+                    <option value="0.3074">Secundario (Cens)</option>
+                    <option value="0.3674">Secundario</option>
+                    <option value="0.4791">Terciario</option>
+                    <option value="0.9228">Universitario</option>
+               </select>
+               
+               <select name="adicionales" class="adicionales">
+                    <option value="0" selected="selected">Sin adicionales</option>
+                    <option value="0.45">Penitenciario</option>
+                    <option value="0.3875">Albergue</option>
+                    <option value="0.225">Especial</option>
+               </select>
+               
+            </div>
+            <div class="marcha">
+                <div class="subtotal">
+                  <div class="dato basico">asigancion de clase (1003)</div>
+                  <div class="dato compensacion_paritaria">compensacion_paritaria</div>
+                  <div class="dato antiguedad">antiguedad (1683)</div>
+                  <div class="dato adicional_suplementario">adicional_suplementario</div>
+                  <div class="dato ubicacion">ubicacion</div>
+                  <div class="dato radio">radio (1344)</div>
+                  <div class="dato presentismo">presentismo</div>
+                  <div class="dato paritaria_2013">paritaria_2013</div>
+                  <div class="dato paritaria_2008">paritaria_2008 (3097)</div>   
+                  <div class="dato adicional_estudios">adicional_estudios</div>
+                  <div class="dato adicional_tipo">adicional_tipo</div>            
+                </div>
+                <div class="total">
+                  <div class="dato salario_bruto">salario_bruto</div>
+                  <div class="dato salario_descuentos">salario_descuentos</div>
+                  <div class="dato salario_neto">salario_neto</div>
+                </div>
+            </div>
+        </div>    
+  </div>
+</div>
+ <div>
+ <P>
+  <!--<span onclick="calcularSalario('diciembre')" class="boton naranja">diciembre</span> -->
+  <span onclick="calcularSalario('enero')" class="boton naranja">enero</span>
+  <span onclick="calcularSalario('febrero')" class="boton naranja">febrero</span>
+  <span onclick="calcularSalario('marzo')" class="boton naranja">marzo</span>
+ 
+  </div>
+<div class="mensaje">Simulación estimada según la información aportada en el acta paritaria 20-DGE-206-2-24</strong>.</div>
+<!--<div class="mensaje">Considerar que en FEBRERO de 2023 se adicionan <strong>$36.000 (treinta y seis mil)</strong> en concepto de <strong>indumentaria</strong></div>-->
+</div>
+<script type="text/javascript">
+//Calcular Básico
+var esqueleto_cargo=document.getElementById('generadorcargo').outerHTML;
+
+function calcularSalario(mes){
+var indice_cargos=54.656536;
+var paritaria_2008=71857.53;
+var paritaria_2013=21580;
+	
+	switch(mes) {
+	case 'diciembre':
+		var indice_cargos=54.656536;
+		var paritaria_2008=71857.53;
+		var paritaria_2013=21580;
+		break;
+	case 'enero':
+		indice_cargos=indice_cargos * 1.058;
+		paritaria_2008=paritaria_2008 * 1.058;
+		paritaria_2013=paritaria_2013 * 1.058;
+		break;
+	case 'febrero':
+		indice_cargos=indice_cargos * 1.208;
+		paritaria_2008=paritaria_2008 * 1.208;
+		paritaria_2013=paritaria_2013 * 1.208;
+		break;
+	case 'marzo':
+		indice_cargos=indice_cargos * 1.358;
+		paritaria_2008=paritaria_2008 * 1.358;
+		paritaria_2013=paritaria_2013 * 1.358;
+		break;	
+	  default:
+		indice_cargos=Number(document.getElementById('indice_cargos').textContent);
+		paritaria_2008=Number(document.getElementById('paritaria_2008').textContent);
+		paritaria_2013=Number(document.getElementById('paritaria_2013').textContent);
+	};
+	
+	
+	var porcentaje_antiguedad = document.getElementById('porcentaje_antiguedad').value;
+	var basico=0;
+	var salario_total_bruto=0;
+	var salario_total_descuentos=0;
+	var salario_total_neto=0;
+		
+	var cargos = document.querySelectorAll('.cargo');	
+		for (var i=0; i < cargos.length; i++) {
+			//console.log(cargos[i]);
+			var puntos = Number(document.querySelectorAll('.'+ cargos[i].className +' .puntos')[i].value);
+			var basico= Number(indice_cargos*puntos);
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.basico').innerHTML = '$ '+ basico;
+			var antiguedad=Number((basico+paritaria_2008+(0.75*paritaria_2013))*porcentaje_antiguedad).toFixed(2);
+			radio=Number((basico)*0.1).toFixed(2);
+			var porcentaje_ubicacion = document.querySelectorAll('.'+ cargos[i].className +' .zona')[i].value;
+			ubicacion=Number(basico * porcentaje_ubicacion).toFixed(2);
+			paritaria_2008=paritaria_2008;
+			var adicional_suplementario = Number(document.querySelectorAll('.'+ cargos[i].className +' .puntos')[i].selectedOptions[0].getAttribute('data-suplementario') * basico).toFixed(2);			
+			presentismo=Number((basico+ Number(adicional_suplementario))*0.1).toFixed(2)
+			
+			var adicional_estudios = Number(document.querySelectorAll('.'+ cargos[i].className +' .estudios')[i].selectedOptions[0].value * basico).toFixed(2);
+			var adicional_tipo = Number(document.querySelectorAll('.'+ cargos[i].className +' .adicionales')[i].selectedOptions[0].value * basico).toFixed(2);
+			var compensacion_paritaria=Number(7200).toFixed(2);			
+			var salario_bruto=Number(basico)+Number(paritaria_2008)+Number(antiguedad)+Number(radio)+Number(ubicacion)+Number(presentismo)+Number(adicional_estudios)+Number(adicional_tipo);
+			console.log(i+' cargo salario bruto: '+ salario_bruto);
+			salario_bruto= salario_bruto + Number(compensacion_paritaria);
+			salario_bruto= salario_bruto + Number(adicional_suplementario);
+			salario_bruto= salario_bruto + Number(paritaria_2013);
+			salario_descuentos= salario_bruto * 0.17
+			salario_neto= salario_bruto - salario_descuentos;
+				
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.basico').innerHTML = '1003 (Asig. Clase)<strong>$ '+ formatito(basico) +'</strong> ';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.compensacion_paritaria').innerHTML = '1408 (Comp Par 2022)<strong>$ '+ formatito(compensacion_paritaria) +'</strong>';	
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.antiguedad').innerHTML = '1716 (Antigüedad) <strong>$ '+ formatito(antiguedad) +'</strong>';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.radio').innerHTML = '1344 (Radio Zona Docente)<strong>$ '+ formatito(radio) +'</strong> ';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.paritaria_2013').innerHTML = '1423 (Adic Par 2013)<strong>$ '+ formatito(paritaria_2013) +'</strong>';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.presentismo').innerHTML = '2719 (Presentismo) <strong>$ '+ formatito(presentismo) +'</strong>';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.paritaria_2008').innerHTML = '3097 (Paritaria 2008)<strong>$  '+ formatito(paritaria_2008) +'</strong>';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.ubicacion').innerHTML = '1345 (Ubicacion Zona EE) <strong>$ '+ formatito(ubicacion) +'</strong> ';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_suplementario').innerHTML = '1946 (Adicional Celador)<strong>$ '+ formatito(adicional_suplementario) +'</strong> ';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_estudios').innerHTML = '1946 (Adicional Estudios) <strong>$ '+ formatito(adicional_estudios) +'</strong> ';
+			cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_tipo').innerHTML = '1946 (Adicional Tipo)<strong>$ '+ formatito(adicional_tipo) +'</strong> ';
+			cargos[i].querySelectorAll('.total')[0].querySelector('.salario_bruto').innerHTML = '<small>Bruto</small><h3>$ '+ Number(salario_bruto).toFixed(2)+'</h3>';
+			cargos[i].querySelectorAll('.total')[0].querySelector('.salario_descuentos').innerHTML = '<small>Descuentos 18%</small><h2> $ -'+ Number(salario_descuentos).toFixed(2) +'</h2>';
+			cargos[i].querySelectorAll('.total')[0].querySelector('.salario_neto').innerHTML = '<small>Neto</small><h1>$ '+ Number(salario_neto).toFixed(2)+'</h1>';			
+	};
+};
+
+function formatito(que){
+	esto=que.toLocaleString('de-DE',{'minimumFractionDigits':2,'maximumFractionDigits':2})
+	return esto;
+};
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGFB0SZM99"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGFB0SZM99');
+    /*calcularSalario('diciembre');*/
+</script>
+<script> 
+// Calcular Básico
+function calcularSalario(mes) {
+  var indice_cargos = 54.656536;
+  var paritaria_2008 = 71857.53;
+  var paritaria_2013 = 21580;
+
+  switch (mes) {
+    case 'diciembre':
+      var indice_cargos = 54.656536;
+      var paritaria_2008 = 71857.53;
+      var paritaria_2013 = 21580;
+      break;
+    case 'enero':
+      indice_cargos = indice_cargos * 1.058;
+      paritaria_2008 = paritaria_2008 * 1.058;
+      paritaria_2013 = paritaria_2013 * 1.058;
+      break;
+    case 'febrero':
+      indice_cargos = indice_cargos * 1.208;
+      paritaria_2008 = paritaria_2008 * 1.208;
+      paritaria_2013 = paritaria_2013 * 1.208;
+      break;
+    case 'marzo':
+      indice_cargos = indice_cargos * 1.358;
+      paritaria_2008 = paritaria_2008 * 1.358;
+      paritaria_2013 = paritaria_2013 * 1.358;
+      break;
+    default:
+      indice_cargos = Number(document.getElementById('indice_cargos').textContent);
+      paritaria_2008 = Number(document.getElementById('paritaria_2008').textContent);
+      paritaria_2013 = Number(document.getElementById('paritaria_2013').textContent);
+  };
+
+  var porcentaje_antiguedad = document.getElementById('porcentaje_antiguedad').value;
+  var cargos = document.querySelectorAll('.cargo');
+
+  for (var i = 0; i < cargos.length; i++) {
+    var puntos = Number(document.querySelectorAll('.' + cargos[i].className + ' .puntos')[i].value);
+    var basico = Number(indice_cargos * puntos);
+    var antiguedad = Number((basico + paritaria_2008 + (0.75 * paritaria_2013)) * porcentaje_antiguedad).toFixed(2);
+    var radio = Number((basico) * 0.1).toFixed(2);
+    var porcentaje_ubicacion = document.querySelectorAll('.' + cargos[i].className + ' .zona')[i].value;
+    var ubicacion = Number(basico * porcentaje_ubicacion).toFixed(2);
+    paritaria_2008 = paritaria_2008;
+    var adicional_suplementario = Number(document.querySelectorAll('.' + cargos[i].className + ' .puntos')[i].selectedOptions[0].getAttribute('data-suplementario') * basico).toFixed(2);
+    var presentismo = Number((basico + Number(adicional_suplementario)) * 0.1).toFixed(2);
+    var adicional_estudios = Number(document.querySelectorAll('.' + cargos[i].className + ' .estudios')[i].selectedOptions[0].value * basico).toFixed(2);
+    var adicional_tipo = Number(document.querySelectorAll('.' + cargos[i].className + ' .adicionales')[i].selectedOptions[0].value * basico).toFixed(2);
+    var compensacion_paritaria = Number(7200).toFixed(2);
+    var salario_bruto = Number(basico) + Number(paritaria_2008) + Number(antiguedad) + Number(radio) + Number(ubicacion) + Number(presentismo) + Number(adicional_estudios) + Number(adicional_tipo);
+    salario_bruto = salario_bruto + Number(compensacion_paritaria);
+    salario_bruto = salario_bruto + Number(adicional_suplementario);
+    salario_bruto = salario_bruto + Number(paritaria_2013);
+    var salario_descuentos = salario_bruto * 0.17;
+    var salario_neto = salario_bruto - salario_descuentos;
+
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.basico').innerHTML = '1003 (Asig. Clase)<strong>$ ' + formatito(basico) + '</strong> ';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.compensacion_paritaria').innerHTML = '1408 (Comp Par 2022)<strong>$ ' + formatito(compensacion_paritaria) + '</strong>';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.antiguedad').innerHTML = '1716 (Antigüedad) <strong>$ ' + formatito(antiguedad) + '</strong>';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.radio').innerHTML = '1344 (Radio Zona Docente)<strong>$ ' + formatito(radio) + '</strong> ';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.paritaria_2013').innerHTML = '1423 (Adic Par 2013)<strong>$ ' + formatito(paritaria_2013) + '</strong>';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.presentismo').innerHTML = '2719 (Presentismo) <strong>$ ' + formatito(presentismo) + '</strong>';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.paritaria_2008').innerHTML = '3097 (Paritaria 2008)<strong>$  ' + formatito(paritaria_2008) + '</strong>';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.ubicacion').innerHTML = '1345 (Ubicacion Zona EE) <strong>$ ' + formatito(ubicacion) + '</strong> ';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_suplementario').innerHTML = '1946 (Adicional Celador)<strong>$ ' + formatito(adicional_suplementario) + '</strong> ';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_estudios').innerHTML = '1946 (Adicional Estudios) <strong>$ ' + formatito(adicional_estudios) + '</strong> ';
+    cargos[i].querySelectorAll('.subtotal')[0].querySelector('.adicional_tipo').innerHTML = '1946 (Adicional Tipo)<strong>$ ' + formatito(adicional_tipo) + '</strong> ';
+    cargos[i].querySelectorAll('.total')[0].querySelector('.salario_bruto').innerHTML = '<small>Bruto</small><h3>$ ' + Number(salario_bruto).toFixed(2) + '</h3>';
+    cargos[i].querySelectorAll('.total')[0].querySelector('.salario_descuentos').innerHTML = '<small>Descuentos 18%</small><h2> $ -' + Number(salario_descuentos).toFixed(2) + '</h2>';
+    cargos[i].querySelectorAll('.total')[0].querySelector('.salario_neto').innerHTML = '<small>Neto</small><h1>$ ' + Number(salario_neto).toFixed(2) + '</h1>';
+  }
+};
+
+function formatito(que) {
+  esto = que.toLocaleString('de-DE', { 'minimumFractionDigits': 2, 'maximumFractionDigits': 2 })
+  return esto;
+};
+</script>
+<footer>
+        <p>&copy;2024 Dario W. Carrizo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
